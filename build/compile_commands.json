@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/projeto/Workspace/Coding/C++/Multithread/build",
+  "command": "/usr/bin/c++      -o CMakeFiles/multithread.dir/src/mthread.cpp.o -c /home/projeto/Workspace/Coding/C++/Multithread/src/mthread.cpp",
+  "file": "/home/projeto/Workspace/Coding/C++/Multithread/src/mthread.cpp"
+}
+]

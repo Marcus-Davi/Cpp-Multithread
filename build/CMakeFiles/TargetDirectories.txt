@@ -1,0 +1,3 @@
+/home/projeto/Workspace/Coding/C++/Multithread/build/CMakeFiles/rebuild_cache.dir
+/home/projeto/Workspace/Coding/C++/Multithread/build/CMakeFiles/multithread.dir
+/home/projeto/Workspace/Coding/C++/Multithread/build/CMakeFiles/edit_cache.dir
