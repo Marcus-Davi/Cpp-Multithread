@@ -10,6 +10,7 @@ struct interval_t {
 
 static bool isPrime(uint64_t number);
 static uint64_t findPrimes(uint64_t start, uint64_t number);
+static uint64_t findPrimes2(uint64_t start, uint64_t number);
 static void ComputeIntervals(uint64_t max, int NThreads, std::vector<interval_t>& intervals );
 
 struct PrimeProcessor {
@@ -37,6 +38,7 @@ int main(){
 
 	while(1){
 	threads.clear();
+	std::cout << "Numer of available cores : " << std::thread::hardware_concurrency() << std::endl;
 	std::cout << "Number of threads to be used : (> 20 may cause system stall): ";
 	std::cin >> NThreads;
 std::cout << "N = " << NThreads << std::endl;
@@ -88,6 +90,14 @@ std::cout << "Computation time = " << std::chrono::duration_cast<std::chrono::mi
 
 
 	}
+
+
+// Siveve of Erastothenes (Ver como implementa em paralelo)
+static inline uint64_t findPrimes2(uint64_t start,uint64_t number){
+	bool* A = new bool[number - start];
+
+
+}
 
 
 static inline uint64_t findPrimes(uint64_t start, uint64_t number){
