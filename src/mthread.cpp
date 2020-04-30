@@ -39,7 +39,7 @@ int main(){
 	while(1){
 	threads.clear();
 	std::cout << "Numer of available cores : " << std::thread::hardware_concurrency() << std::endl;
-	std::cout << "Number of threads to be used : (> 20 may cause system stall): ";
+	std::cout << "Number of threads to be used : (> 20 may cause system stall | type '0' for exiting): ";
 	std::cin >> NThreads;
 std::cout << "N = " << NThreads << std::endl;
 	if(NThreads == 0){
