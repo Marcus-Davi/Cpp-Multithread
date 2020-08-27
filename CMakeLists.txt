@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.8) #CMake Version
-project (multithread) #Project Name
+project (multithreading) #Project Name
+
+find_package(OpenMP)
 
 #set (Eigen3_DIR /home/projeto/Workspace/Coding/C++/Eigen/cmake) #Manually set Directory for Package
 
@@ -7,14 +9,15 @@ project (multithread) #Project Name
 
 message(WARNING ${Eigen3_DIR}) # Send Message
 
-file(GLOB SOURCES "src/*.cpp") # Tell where are the source files (automatic)
+#file(GLOB SOURCES "src/*.cpp") # Tell where are the source files (automatic)
 
 #set (EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin) #executables in SRC/bin
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin) #executables in SRC/build/bin
 
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON) #Useful for YCM (vim autocomplete plugin, not essential)
-add_executable(multithread ${SOURCES}) #Add Executable
+add_executable(multithread src/mthread.cpp) #Add Executable
+add_executable(openMP src/openMP.cpp)
 
 #target_include_directories(project_name PUBLIC include)  # Project Including
 #include_directories(${PCL_INCLUDE_DIRS}) # General Include
@@ -22,6 +25,7 @@ add_executable(multithread ${SOURCES}) #Add Executable
 #target_link_libraries(project_name Eigen3::Eigen) # Project Linking
 #link_directories(${PCL_LIBRARY_DIRS}) # General Linking
 target_link_libraries(multithread pthread)
+target_link_libraries(openMP PUBLIC OpenMP::OpenMP_CXX)
 
 # Create Symlink for compile commands for YCM
 if(CMAKE_EXPORT_COMPILE_COMMANDS)
