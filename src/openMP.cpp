@@ -51,7 +51,7 @@ int main()
 
 #pragma omp parallel
         {
-            
+            // printf("%d",omp_get_thread_num());
             #pragma omp for
             for(int i=2;i<UpTo;++i){
                 if(isPrime(i))
